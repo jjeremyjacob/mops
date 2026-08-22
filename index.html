@@ -25,6 +25,233 @@
 <body>
 
 
+<!-- =====================================================
+     FIXED EDITORIAL NAVIGATION
+===================================================== -->
+
+<nav
+  class="editorial-nav"
+  aria-label="Main navigation">
+
+
+  <!-- MOPS -->
+
+  <a
+    href="#top"
+    class="nav-top">
+
+    MOPS
+
+  </a>
+
+
+  <!-- BOOK AN APPOINTMENT / DRAWER TOGGLE -->
+
+  <button
+    type="button"
+    class="nav-appointment"
+    id="appointmentToggle"
+    aria-controls="appointmentDrawer"
+    aria-expanded="false">
+
+    BOOK AN APPOINTMENT
+
+  </button>
+
+
+  <!-- SECTION NAVIGATION -->
+
+  <div class="nav-section">
+
+
+    <a href="#book">
+      BOOK
+    </a>
+
+
+    <a href="#about">
+      ABOUT
+    </a>
+
+
+    <a href="#products">
+      PRODUCTS
+    </a>
+
+
+    <a href="#locations">
+      LOCATIONS
+    </a>
+
+
+  </div>
+
+
+</nav>
+
+
+
+<!-- =====================================================
+     APPOINTMENT DRAWER
+===================================================== -->
+
+<aside
+  class="appointment-drawer"
+  id="appointmentDrawer"
+  aria-hidden="true">
+
+
+  <div class="appointment-drawer-inner">
+
+
+    <div class="appointment-drawer-header">
+
+
+      <div class="appointment-drawer-label">
+        BOOK AN APPOINTMENT
+      </div>
+
+
+      <button
+        type="button"
+        class="appointment-close"
+        id="appointmentClose"
+        aria-label="Close appointment drawer">
+
+        CLOSE ×
+
+      </button>
+
+
+    </div>
+
+
+
+    <div class="booking-grid">
+
+
+      <!-- MOPS / HUDSON -->
+
+      <a
+        class="booking-button"
+        href="https://square.site/book/L6HY7QPAVJ4B6/jason-devastation-hudson-hudson-ny"
+        target="_blank"
+        rel="noopener">
+
+
+        <div class="booking-top">
+
+          <span>
+            AT MOPS
+          </span>
+
+        </div>
+
+
+        <div class="booking-middle">
+
+          <strong>
+            HUDSON, NY
+          </strong>
+
+          <p>
+            609 Warren Street,<br>
+            3rd Floor<br>
+            Hudson, NY
+          </p>
+
+        </div>
+
+
+        <div class="booking-bottom">
+
+          <small>
+            BOOK APPOINTMENT →
+          </small>
+
+        </div>
+
+
+      </a>
+
+
+
+      <!-- HAIR STORY / NYC -->
+
+      <a
+        class="booking-button"
+        href="https://square.site/book/FKJN8RQCS61B4/jason-devastation-nyc-new-york-ny"
+        target="_blank"
+        rel="noopener">
+
+
+        <div class="booking-top">
+
+          <span>
+            AT HAIR STORY STUDIO
+          </span>
+
+        </div>
+
+
+        <div class="booking-middle">
+
+          <strong>
+            NYC
+          </strong>
+
+          <p>
+            95 5th Avenue,<br>
+            5th Floor<br>
+            New York, NY
+          </p>
+
+        </div>
+
+
+        <div class="booking-bottom">
+
+          <small>
+            BOOK APPOINTMENT →
+          </small>
+
+        </div>
+
+
+      </a>
+
+
+    </div>
+
+
+    <p class="booking-note">
+
+      For questions about services or booking,<br>
+
+      <a href="mailto:info@jasondevastation.com">
+        email Jason at info@jasondevastation.com.
+      </a>
+
+    </p>
+
+
+  </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     DRAWER BACKDROP
+===================================================== -->
+
+<div
+  class="drawer-backdrop"
+  id="drawerBackdrop">
+</div>
+
+
+
 <main id="top">
 
 
@@ -36,11 +263,13 @@
   class="hero"
   id="work">
 
+
   <picture>
 
     <source
       media="(max-width: 720px)"
       srcset="images/mops-mobile.webp">
+
 
     <img
       src="images/mops.webp"
@@ -51,40 +280,10 @@
   </picture>
 
 
-  <nav
-    class="editorial-nav"
-    aria-label="Main navigation">
-
-    <a
-      href="#top"
-      class="nav-top">
-      MOPS
-    </a>
-
-    <a
-      href="#book"
-      class="nav-right">
-      BOOK
-    </a>
-
-    <a
-      href="#about"
-      class="nav-bottom">
-      JASON DEVASTATION
-    </a>
-
-    <a
-      href="#products"
-      class="nav-left">
-      PRODUCTS
-    </a>
-
-  </nav>
-
-
   <div class="hero-title">
     MOPS
   </div>
+
 
 </section>
 
@@ -98,6 +297,7 @@
   class="booking section"
   id="book">
 
+
   <div class="section-label">
     BOOK AN APPOINTMENT
   </div>
@@ -106,15 +306,14 @@
   <div class="booking-grid">
 
 
-    <!-- =================================================
-         MOPS / HUDSON
-    ================================================= -->
+    <!-- MOPS / HUDSON -->
 
     <a
       class="booking-button reveal"
       href="https://square.site/book/L6HY7QPAVJ4B6/jason-devastation-hudson-hudson-ny"
       target="_blank"
       rel="noopener">
+
 
       <div class="booking-top">
 
@@ -148,19 +347,19 @@
 
       </div>
 
+
     </a>
 
 
 
-    <!-- =================================================
-         HAIR STORY / NYC
-    ================================================= -->
+    <!-- HAIR STORY / NYC -->
 
     <a
       class="booking-button reveal"
       href="https://square.site/book/FKJN8RQCS61B4/jason-devastation-nyc-new-york-ny"
       target="_blank"
       rel="noopener">
+
 
       <div class="booking-top">
 
@@ -194,6 +393,7 @@
 
       </div>
 
+
     </a>
 
 
@@ -209,6 +409,7 @@
     </a>
 
   </p>
+
 
 </section>
 
@@ -235,6 +436,7 @@
 
   <div class="jason-content">
 
+
     <h2 class="jason-title">
       JASON<br>
       DEVASTATION
@@ -243,12 +445,14 @@
 
     <div class="jason-info">
 
+
       <div class="jason-role">
         HAIRSTYLIST
       </div>
 
 
       <div class="jason-copy">
+
 
         <p>
           Educated and cultured in SF. Refined and honed
@@ -273,11 +477,15 @@
 
         </a>
 
+
       </div>
+
 
     </div>
 
+
   </div>
+
 
 </section>
 
@@ -320,6 +528,7 @@
 
     <blockquote class="hairstory-quote">
 
+
       <p>
         “The new way to wash hair allows people to
         discover their hair for the first time —
@@ -331,12 +540,15 @@
         — HAIRSTORY.COM
       </cite>
 
+
     </blockquote>
 
 
     <div class="hairstory-info">
 
+
       <div class="hairstory-copy">
+
 
         <p>
           Hair that is dramatically transformed requires
@@ -366,11 +578,15 @@
 
         </a>
 
+
       </div>
+
 
     </div>
 
+
   </div>
+
 
 </section>
 
@@ -381,18 +597,22 @@
 ===================================================== -->
 
 <section
-  class="locations-section">
+  class="locations-section"
+  id="locations">
 
 
   <div class="locations-header">
+
 
     <div class="locations-label">
       LOCATIONS
     </div>
 
+
     <h2 class="locations-title">
       HUDSON & NYC
     </h2>
+
 
   </div>
 
@@ -400,15 +620,14 @@
   <div class="locations-grid">
 
 
-    <!-- =================================================
-         MOPS / HUDSON
-    ================================================= -->
+    <!-- HUDSON -->
 
     <a
       class="location-card"
       href="https://www.google.com/maps/search/?api=1&query=609+Warren+Street+Hudson+NY"
       target="_blank"
       rel="noopener">
+
 
       <div class="location-map">
 
@@ -423,13 +642,16 @@
 
       <div class="location-info">
 
+
         <div class="location-name">
           MOPS
         </div>
 
+
         <div class="location-city">
           HUDSON, NY
         </div>
+
 
         <div class="location-address">
           609 Warren Street,<br>
@@ -437,25 +659,27 @@
           Hudson, NY
         </div>
 
+
         <div class="location-link">
           OPEN IN GOOGLE MAPS →
         </div>
 
+
       </div>
+
 
     </a>
 
 
 
-    <!-- =================================================
-         HAIR STORY / NYC
-    ================================================= -->
+    <!-- NYC -->
 
     <a
       class="location-card"
       href="https://www.google.com/maps/search/?api=1&query=95+5th+Avenue+New+York+NY"
       target="_blank"
       rel="noopener">
+
 
       <div class="location-map">
 
@@ -470,13 +694,16 @@
 
       <div class="location-info">
 
+
         <div class="location-name">
           HAIR STORY STUDIO
         </div>
 
+
         <div class="location-city">
           NEW YORK, NY
         </div>
+
 
         <div class="location-address">
           95 5th Avenue,<br>
@@ -484,16 +711,20 @@
           New York, NY
         </div>
 
+
         <div class="location-link">
           OPEN IN GOOGLE MAPS →
         </div>
 
+
       </div>
+
 
     </a>
 
 
   </div>
+
 
 </section>
 
@@ -508,7 +739,6 @@
   <img
     src="images/skin.webp"
     alt=""
-    class="final-image"
     loading="lazy">
 
 </section>
@@ -524,13 +754,13 @@
 
 <footer class="footer">
 
+
   <span>
     MOPS | JASON DEVASTATION
   </span>
 
 
-  <a
-    href="mailto:info@jasondevastation.com">
+  <a href="mailto:info@jasondevastation.com">
     info@jasondevastation.com
   </a>
 
@@ -539,13 +769,16 @@
     href="https://www.instagram.com/mopshudson/"
     target="_blank"
     rel="noopener">
-    @MOPSHUDSON
+
+    INSTAGRAM @MOPSHUDSON
+
   </a>
 
 
   <a href="#top">
     BACK TO TOP ↑
   </a>
+
 
 </footer>
 

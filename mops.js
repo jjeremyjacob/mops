@@ -1,336 +1,237 @@
-/* =====================================================
-   JASON DEVASTATION
-   MOPS.JS
-===================================================== */
+document.addEventListener("DOMContentLoaded", () => {
 
-document.addEventListener(
-  "DOMContentLoaded",
-  () => {
+  /* =====================================================
+     ELEMENTS
+  ===================================================== */
 
+  const drawer =
+    document.getElementById("appointmentDrawer");
 
-    /* =================================================
-       MOBILE MENU
-    ================================================= */
+  const toggle =
+    document.getElementById("appointmentToggle");
 
-    const menuButton =
-      document.querySelector(
-        ".menu-button"
-      );
+  const closeButton =
+    document.getElementById("appointmentClose");
 
-    const navigation =
-      document.querySelector(
-        ".navigation"
-      );
+  const backdrop =
+    document.getElementById("drawerBackdrop");
 
 
-    function closeMenu() {
+  /* =====================================================
+     SAFETY CHECK
+  ===================================================== */
 
-      if (
-        !menuButton ||
-        !navigation
-      ) {
-        return;
-      }
-
-
-      menuButton.classList.remove(
-        "open"
-      );
-
-
-      navigation.classList.remove(
-        "open"
-      );
+  if (
+    !drawer ||
+    !toggle ||
+    !closeButton ||
+    !backdrop
+  ) {
+    return;
+  }
 
 
-      menuButton.setAttribute(
-        "aria-expanded",
-        "false"
-      );
+  /* =====================================================
+     OPEN DRAWER
+  ===================================================== */
 
+  function openDrawer() {
 
-      document.body.classList.remove(
-        "menu-open"
-      );
+    drawer.classList.add("open");
 
-    }
+    backdrop.classList.add("visible");
 
+    document.body.classList.add("drawer-open");
 
-    if (
-      menuButton &&
-      navigation
-    ) {
-
-
-      menuButton.addEventListener(
-        "click",
-        () => {
-
-          const isOpen =
-            !navigation.classList.contains(
-              "open"
-            );
-
-
-          menuButton.classList.toggle(
-            "open",
-            isOpen
-          );
-
-
-          navigation.classList.toggle(
-            "open",
-            isOpen
-          );
-
-
-          menuButton.setAttribute(
-            "aria-expanded",
-            String(isOpen)
-          );
-
-
-          document.body.classList.toggle(
-            "menu-open",
-            isOpen
-          );
-
-        }
-      );
-
-
-      navigation
-        .querySelectorAll("a")
-        .forEach(
-          link => {
-
-            link.addEventListener(
-              "click",
-              () => {
-
-                closeMenu();
-
-              }
-            );
-
-          }
-        );
-
-    }
-
-
-
-    /* =================================================
-       ESCAPE KEY
-    ================================================= */
-
-    document.addEventListener(
-      "keydown",
-      event => {
-
-        if (
-          event.key === "Escape"
-        ) {
-
-          closeMenu();
-
-        }
-
-      }
+    drawer.setAttribute(
+      "aria-hidden",
+      "false"
     );
 
-
-
-    /* =================================================
-       DESKTOP MENU RESET
-    ================================================= */
-
-    window.addEventListener(
-      "resize",
-      () => {
-
-        if (
-          window.innerWidth > 720
-        ) {
-
-          closeMenu();
-
-        }
-
-      }
+    toggle.setAttribute(
+      "aria-expanded",
+      "true"
     );
 
+  }
 
 
-    /* =================================================
-       SCROLL REVEAL
-    ================================================= */
+  /* =====================================================
+     CLOSE DRAWER
+  ===================================================== */
 
-    const revealElements =
-      document.querySelectorAll(
-        ".reveal"
-      );
+  function closeDrawer() {
 
+    drawer.classList.remove("open");
+
+    backdrop.classList.remove("visible");
+
+    document.body.classList.remove("drawer-open");
+
+    drawer.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    toggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+  }
+
+
+  /* =====================================================
+     TOGGLE DRAWER
+     
+     BOOK AN APPOINTMENT:
+     CLOSED → OPEN
+     OPEN   → CLOSED
+  ===================================================== */
+
+  toggle.addEventListener("click", () => {
 
     if (
-      "IntersectionObserver"
-      in window
+      drawer.classList.contains("open")
     ) {
 
-
-      const observer =
-        new IntersectionObserver(
-          entries => {
-
-            entries.forEach(
-              entry => {
-
-                if (
-                  !entry.isIntersecting
-                ) {
-
-                  return;
-
-                }
-
-
-                entry.target.classList.add(
-                  "visible"
-                );
-
-
-                observer.unobserve(
-                  entry.target
-                );
-
-              }
-            );
-
-          },
-          {
-            threshold: 0.1,
-
-            rootMargin:
-              "0px 0px -60px 0px"
-          }
-        );
-
-
-      revealElements.forEach(
-        element => {
-
-          observer.observe(
-            element
-          );
-
-        }
-      );
-
+      closeDrawer();
 
     } else {
 
-
-      revealElements.forEach(
-        element => {
-
-          element.classList.add(
-            "visible"
-          );
-
-        }
-      );
+      openDrawer();
 
     }
 
+  });
 
 
-    /* =================================================
-       SMOOTH INTERNAL LINKS
-    ================================================= */
+  /* =====================================================
+     CLOSE BUTTON
+  ===================================================== */
 
-    document
-      .querySelectorAll(
-        'a[href^="#"]'
-      )
-      .forEach(
-        link => {
-
-          link.addEventListener(
-            "click",
-            event => {
-
-              const targetID =
-                link.getAttribute(
-                  "href"
-                );
+  closeButton.addEventListener(
+    "click",
+    closeDrawer
+  );
 
 
-              if (
-                !targetID ||
-                targetID === "#"
-              ) {
+  /* =====================================================
+     BACKDROP
+  ===================================================== */
 
-                return;
-
-              }
-
-
-              const target =
-                document.querySelector(
-                  targetID
-                );
+  backdrop.addEventListener(
+    "click",
+    closeDrawer
+  );
 
 
-              if (!target) {
+  /* =====================================================
+     ESCAPE KEY
+  ===================================================== */
 
-                return;
+  document.addEventListener(
+    "keydown",
+    (event) => {
 
-              }
+      if (
+        event.key === "Escape" &&
+        drawer.classList.contains("open")
+      ) {
+
+        closeDrawer();
+
+      }
+
+    }
+  );
 
 
-              event.preventDefault();
+  /* =====================================================
+     SECTION NAVIGATION
+     
+     When clicking BOOK while drawer is open,
+     close the drawer and then navigate to #book.
+  ===================================================== */
 
+  document
+    .querySelectorAll(".nav-section a")
+    .forEach((link) => {
 
-              target.scrollIntoView({
-                behavior:
-                  "smooth",
+      link.addEventListener(
+        "click",
+        () => {
 
-                block:
-                  "start"
-              });
+          if (
+            drawer.classList.contains("open")
+          ) {
 
-            }
-          );
+            closeDrawer();
+
+          }
 
         }
       );
 
+    });
 
 
-    /* =================================================
-       IMAGE ERROR REPORTING
-    ================================================= */
+  /* =====================================================
+     REVEAL ANIMATIONS
+  ===================================================== */
 
-    document
-      .querySelectorAll("img")
-      .forEach(
-        image => {
+  const reveals =
+    document.querySelectorAll(".reveal");
 
-          image.addEventListener(
-            "error",
-            () => {
 
-              console.warn(
-                "Image failed to load:",
-                image.src
+  if (
+    "IntersectionObserver" in window
+  ) {
+
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (
+              entry.isIntersecting
+            ) {
+
+              entry.target.classList.add(
+                "visible"
+              );
+
+              observer.unobserve(
+                entry.target
               );
 
             }
-          );
 
+          });
+
+        },
+        {
+          threshold: 0.12
         }
       );
 
 
+    reveals.forEach((element) => {
+
+      observer.observe(element);
+
+    });
+
+  } else {
+
+    reveals.forEach((element) => {
+
+      element.classList.add("visible");
+
+    });
+
   }
-);
+
+
+});
