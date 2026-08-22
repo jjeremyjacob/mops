@@ -1361,3 +1361,364 @@ figure {
       none !important;
   }
 }
+
+/* =====================================================
+   LOCATIONS
+===================================================== */
+
+.locations-section {
+
+  width: 100%;
+
+  padding:
+    clamp(90px, 12vw, 180px)
+    var(--padding)
+    clamp(100px, 14vw, 180px);
+
+  border-top:
+    1px solid var(--black);
+
+  background:
+    var(--background);
+}
+
+
+/* =====================================================
+   LOCATIONS HEADER
+===================================================== */
+
+.locations-header {
+
+  margin-bottom:
+    clamp(45px, 7vw, 90px);
+}
+
+.locations-label {
+
+  margin-bottom:
+    25px;
+
+  font-size:
+    10px;
+
+  line-height:
+    1;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    .12em;
+
+  color:
+    var(--gray);
+}
+
+.locations-title {
+
+  margin:
+    0;
+
+  font-size:
+    clamp(55px, 9vw, 145px);
+
+  line-height:
+    .78;
+
+  font-weight:
+    400;
+
+  letter-spacing:
+    -.075em;
+}
+
+
+/* =====================================================
+   LOCATION GRID
+===================================================== */
+
+.locations-grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap:
+    var(--gap);
+}
+
+
+/* =====================================================
+   LOCATION CARD
+===================================================== */
+
+.location-card {
+
+  display:
+    block;
+
+  border:
+    1px solid var(--black);
+
+  background:
+    var(--background);
+
+  text-decoration:
+    none;
+}
+
+
+/* =====================================================
+   MAP
+===================================================== */
+
+.location-map {
+
+  position:
+    relative;
+
+  width:
+    100%;
+
+  aspect-ratio:
+    16 / 10;
+
+  overflow:
+    hidden;
+
+  border-bottom:
+    1px solid var(--black);
+
+  background:
+    #dedad4;
+
+  filter:
+    grayscale(1);
+}
+
+.location-map iframe {
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  border:
+    0;
+
+  filter:
+    grayscale(1)
+    contrast(.9);
+
+}
+
+
+/* =====================================================
+   LOCATION INFORMATION
+===================================================== */
+
+.location-info {
+
+  min-height:
+    230px;
+
+  padding:
+    clamp(25px, 3vw, 45px);
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr auto;
+
+  grid-template-rows:
+    auto auto 1fr auto;
+
+  column-gap:
+    20px;
+}
+
+
+.location-name {
+
+  grid-column:
+    1 / -1;
+
+  font-size:
+    10px;
+
+  line-height:
+    1;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    .12em;
+}
+
+
+.location-city {
+
+  grid-column:
+    1 / -1;
+
+  margin-top:
+    14px;
+
+  font-size:
+    clamp(32px, 4vw, 58px);
+
+  line-height:
+    .85;
+
+  font-weight:
+    400;
+
+  letter-spacing:
+    -.055em;
+}
+
+
+.location-address {
+
+  grid-column:
+    1;
+
+  align-self:
+    end;
+
+  margin-top:
+    40px;
+
+  font-size:
+    14px;
+
+  line-height:
+    1.25;
+}
+
+
+.location-link {
+
+  grid-column:
+    2;
+
+  align-self:
+    end;
+
+  margin-top:
+    40px;
+
+  font-size:
+    9px;
+
+  line-height:
+    1;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    .12em;
+
+  text-align:
+    right;
+}
+
+
+/* =====================================================
+   LOCATION CARD — NO HOVER EFFECT
+===================================================== */
+
+.location-card:hover,
+.location-card:focus,
+.location-card:active {
+
+  color:
+    var(--black);
+
+  text-decoration:
+    none;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 720px) {
+
+  .locations-section {
+
+    padding:
+      90px
+      var(--padding)
+      110px;
+  }
+
+
+  .locations-header {
+
+    margin-bottom:
+      50px;
+  }
+
+
+  .locations-title {
+
+    font-size:
+      clamp(50px, 14vw, 85px);
+  }
+
+
+  .locations-grid {
+
+    grid-template-columns:
+      1fr;
+
+    gap:
+      25px;
+  }
+
+
+  .location-map {
+
+    aspect-ratio:
+      4 / 3;
+  }
+
+
+  .location-info {
+
+    min-height:
+      210px;
+
+    padding:
+      25px;
+  }
+
+
+  .location-city {
+
+    font-size:
+      clamp(34px, 10vw, 55px);
+  }
+
+
+  .location-address {
+
+    font-size:
+      14px;
+  }
+
+}
