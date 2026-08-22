@@ -151,6 +151,12 @@ figure {
 .nav-top {
   top: 22px;
   left: 25px;
+
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+
+  transform: rotate(180deg);
+  transform-origin: center;
 }
 
 
