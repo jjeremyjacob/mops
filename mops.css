@@ -1703,3 +1703,64 @@ figure {
       none !important;
   }
 }
+
+/* =====================================================
+   FINAL IMAGE
+===================================================== */
+
+.final-image-section {
+
+  width: 100%;
+
+  padding:
+    0
+    var(--padding);
+
+  background:
+    var(--background);
+
+  border-top:
+    1px solid var(--black);
+}
+
+.final-image {
+
+  display: block;
+
+  width: 100%;
+
+  height: auto;
+
+  max-height: 900px;
+
+  object-fit: cover;
+
+  object-position: center;
+}
+
+
+/* =====================================================
+   FINAL IMAGE — MOBILE
+===================================================== */
+
+@media (max-width: 720px) {
+
+  .final-image-section {
+
+    padding:
+      0
+      10px;
+  }
+
+  .final-image {
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: none;
+
+    object-fit: initial;
+  }
+
+}
