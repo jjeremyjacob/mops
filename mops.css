@@ -17,28 +17,22 @@
 html {
   margin: 0;
   padding: 0;
-
   background: #f4ece5;
   color: #080808;
-
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   padding: 0;
-
   background: #f4ece5;
   color: #080808;
-
   font-family:
     Arial,
     Helvetica,
     sans-serif;
-
   font-weight: 400;
   line-height: 1.2;
-
   overflow-x: hidden;
 }
 
@@ -69,6 +63,12 @@ figure {
 
   --background: #f4ece5;
 
+  --background-alt: #f2ebe4;
+
+  --background-soft: #f0e9e2;
+
+  --background-muted: #f1ebe5;
+
   --black: #080808;
 
   --white: #fff;
@@ -95,15 +95,11 @@ figure {
 
 .site-header {
   position: absolute;
-
   top: 0;
   left: 0;
-
   width: 100%;
   height: 0;
-
   z-index: 1000;
-
   pointer-events: none;
 }
 
@@ -123,38 +119,24 @@ figure {
 
 .editorial-nav {
   position: absolute;
-
   inset: 0;
-
   z-index: 20;
-
   width: 100%;
   height: 100%;
-
   pointer-events: none;
 }
 
 .editorial-nav a {
   position: absolute;
-
   display: block;
-
   color: var(--white);
-
   font-size: 9px;
-
   line-height: 1;
-
   font-weight: 400;
-
   text-transform: uppercase;
-
   letter-spacing: .16em;
-
   text-decoration: none;
-
   white-space: nowrap;
-
   pointer-events: auto;
 }
 
@@ -202,41 +184,32 @@ figure {
 
 .hero {
   position: relative;
-
   width: 100vw;
   max-width: 100vw;
-
   height: 100svh;
   min-height: 500px;
-
   margin: 0;
   padding: 0;
-
   overflow: hidden;
+  background: var(--background);
 }
 
 .hero picture {
   display: block;
-
   width: 100%;
   height: 100%;
-
   margin: 0;
   padding: 0;
 }
 
 .hero-image {
   display: block;
-
   width: 100vw;
   max-width: none;
-
   height: 100svh;
   min-height: 500px;
-
   margin: 0;
   padding: 0;
-
   object-fit: cover;
   object-position: center;
 }
@@ -248,13 +221,10 @@ figure {
 
 .hero-title {
   position: absolute;
-
   top: 50%;
   left: 50%;
-
   transform:
     translate(-50%, -50%);
-
   z-index: 10;
 
   color: var(--white);
@@ -291,15 +261,20 @@ figure {
   margin-bottom:
     clamp(45px, 7vw, 100px);
 
-  font-size: 10px;
+  font-size:
+    10px;
 
-  line-height: 1;
+  line-height:
+    1;
 
-  text-transform: uppercase;
+  text-transform:
+    uppercase;
 
-  letter-spacing: .12em;
+  letter-spacing:
+    .12em;
 
-  color: var(--gray);
+  color:
+    var(--gray);
 }
 
 
@@ -310,15 +285,23 @@ figure {
 .booking {
   border-top:
     1px solid var(--black);
+
+  background:
+    var(--background-alt);
+
+  color:
+    var(--black);
 }
 
 .booking-grid {
-  display: grid;
+  display:
+    grid;
 
   grid-template-columns:
     repeat(2, minmax(0, 1fr));
 
-  gap: var(--gap);
+  gap:
+    var(--gap);
 }
 
 .booking-button {
@@ -331,11 +314,14 @@ figure {
   border:
     1px solid var(--black);
 
-  display: flex;
+  display:
+    flex;
 
-  flex-direction: column;
+  flex-direction:
+    column;
 
-  justify-content: space-between;
+  justify-content:
+    space-between;
 
   background:
     transparent;
@@ -350,7 +336,7 @@ figure {
     var(--black);
 
   color:
-    var(--background);
+    var(--background-alt);
 }
 
 .booking-top span {
@@ -455,7 +441,10 @@ figure {
     1px solid var(--black);
 
   background:
-    var(--background);
+    var(--background-soft);
+
+  color:
+    var(--black);
 }
 
 
@@ -523,6 +512,12 @@ figure {
 
   flex-direction:
     column;
+
+  background:
+    var(--background-soft);
+
+  color:
+    var(--black);
 }
 
 
@@ -567,6 +562,9 @@ figure {
 
   letter-spacing:
     -.075em;
+
+  color:
+    var(--black);
 }
 
 
@@ -603,6 +601,9 @@ figure {
 
   letter-spacing:
     .1em;
+
+  color:
+    var(--black);
 }
 
 .jason-copy {
@@ -622,6 +623,9 @@ figure {
 
   letter-spacing:
     -.02em;
+
+  color:
+    var(--black);
 }
 
 .jason-email {
@@ -639,6 +643,9 @@ figure {
 
   letter-spacing:
     .1em;
+
+  color:
+    var(--black);
 }
 
 .jason-email:hover {
@@ -665,6 +672,9 @@ figure {
 
   background:
     var(--background);
+
+  color:
+    var(--black);
 }
 
 
@@ -914,6 +924,281 @@ figure {
 
 
 /* =====================================================
+   LOCATIONS
+===================================================== */
+
+.locations-section {
+  width:
+    100%;
+
+  padding:
+    clamp(90px, 12vw, 180px)
+    var(--padding)
+    clamp(100px, 14vw, 180px);
+
+  border-top:
+    1px solid var(--black);
+
+  background:
+    var(--background-muted);
+
+  color:
+    var(--black);
+}
+
+
+/* =====================================================
+   LOCATIONS HEADER
+===================================================== */
+
+.locations-header {
+  margin-bottom:
+    clamp(45px, 7vw, 90px);
+}
+
+.locations-label {
+  margin-bottom:
+    25px;
+
+  font-size:
+    10px;
+
+  line-height:
+    1;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    .12em;
+
+  color:
+    var(--gray);
+}
+
+.locations-title {
+  margin:
+    0;
+
+  font-size:
+    clamp(55px, 9vw, 145px);
+
+  line-height:
+    .78;
+
+  font-weight:
+    400;
+
+  letter-spacing:
+    -.075em;
+}
+
+
+/* =====================================================
+   LOCATION GRID
+===================================================== */
+
+.locations-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap:
+    var(--gap);
+}
+
+
+/* =====================================================
+   LOCATION CARD
+===================================================== */
+
+.location-card {
+  display:
+    block;
+
+  border:
+    1px solid var(--black);
+
+  background:
+    var(--background-muted);
+
+  text-decoration:
+    none;
+}
+
+
+/* =====================================================
+   MAP
+===================================================== */
+
+.location-map {
+  position:
+    relative;
+
+  width:
+    100%;
+
+  aspect-ratio:
+    16 / 10;
+
+  overflow:
+    hidden;
+
+  border-bottom:
+    1px solid var(--black);
+
+  background:
+    #dedad4;
+
+  filter:
+    grayscale(1);
+}
+
+.location-map iframe {
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  border:
+    0;
+
+  filter:
+    grayscale(1)
+    contrast(.9);
+}
+
+
+/* =====================================================
+   LOCATION INFORMATION
+===================================================== */
+
+.location-info {
+  min-height:
+    230px;
+
+  padding:
+    clamp(25px, 3vw, 45px);
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr auto;
+
+  grid-template-rows:
+    auto auto 1fr auto;
+
+  column-gap:
+    20px;
+}
+
+.location-name {
+  grid-column:
+    1 / -1;
+
+  font-size:
+    10px;
+
+  line-height:
+    1;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    .12em;
+}
+
+.location-city {
+  grid-column:
+    1 / -1;
+
+  margin-top:
+    14px;
+
+  font-size:
+    clamp(32px, 4vw, 58px);
+
+  line-height:
+    .85;
+
+  font-weight:
+    400;
+
+  letter-spacing:
+    -.055em;
+}
+
+.location-address {
+  grid-column:
+    1;
+
+  align-self:
+    end;
+
+  margin-top:
+    40px;
+
+  font-size:
+    14px;
+
+  line-height:
+    1.25;
+}
+
+.location-link {
+  grid-column:
+    2;
+
+  align-self:
+    end;
+
+  margin-top:
+    40px;
+
+  font-size:
+    9px;
+
+  line-height:
+    1;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    .12em;
+
+  text-align:
+    right;
+}
+
+
+/* =====================================================
+   LOCATION CARD — NO HOVER EFFECT
+===================================================== */
+
+.location-card:hover,
+.location-card:focus,
+.location-card:active {
+  color:
+    var(--black);
+
+  text-decoration:
+    none;
+}
+
+
+/* =====================================================
    FOOTER
 ===================================================== */
 
@@ -934,6 +1219,9 @@ figure {
 
   gap:
     30px;
+
+  background:
+    var(--background);
 
   color:
     var(--gray);
@@ -1155,163 +1443,193 @@ figure {
 
 
   /* ===================================================
-     JASON SECTION
-  =================================================== */
+   JASON SECTION — MOBILE
+=================================================== */
 
-  .jason-section {
-    display:
-      block;
-  }
+.jason-section {
+  display: block;
+  background: var(--background-soft);
+  color: var(--black);
+}
 
 
+/* ===================================================
+   JASON IMAGE
+=================================================== */
+
+.jason-image {
+  width: 100%;
+  height: 125vw;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.jason-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* ===================================================
+   JASON CONTENT
+=================================================== */
+
+.jason-content {
+  min-height: auto;
+
+  padding:
+    48px
+    var(--padding)
+    70px;
+
+  background: var(--background-soft);
+  color: var(--black);
+}
+
+
+/* ===================================================
+   JASON TITLE
+=================================================== */
+
+.jason-title {
+  margin:
+    0 0 48px;
+
+  font-size:
+    clamp(50px, 14vw, 88px);
+
+  line-height:
+    .78;
+
+  font-weight:
+    400;
+
+  letter-spacing:
+    -.075em;
+
+  color:
+    var(--black);
+}
+
+
+/* ===================================================
+   JASON INFO
+=================================================== */
+
+.jason-info {
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr;
+
+  gap:
+    28px;
+
+  padding-top:
+    22px;
+
+  border-top:
+    1px solid var(--black);
+}
+
+
+/* ===================================================
+   JASON ROLE
+=================================================== */
+
+.jason-role {
+  font-size:
+    9px;
+
+  line-height:
+    1.2;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    .1em;
+}
+
+
+/* ===================================================
+   JASON COPY
+=================================================== */
+
+.jason-copy {
+  max-width:
+    none;
+}
+
+.jason-copy p {
+  margin:
+    0 0 18px;
+
+  font-size:
+    18px;
+
+  line-height:
+    1.12;
+
+  letter-spacing:
+    -.02em;
+}
+
+
+/* ===================================================
+   JASON EMAIL
+=================================================== */
+
+.jason-email {
+  display:
+    inline-block;
+
+  margin-top:
+    8px;
+
+  font-size:
+    9px;
+
+  line-height:
+    1;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    .1em;
+}
   /* ===================================================
-     JASON IMAGE — TALL MOBILE
+     LOCATIONS
   =================================================== */
 
-  .jason-image {
-    width:
-      100%;
-
-    height:
-      125vw;
-
-    padding:
-      10px;
-
-    overflow:
-      hidden;
-  }
-
-  .jason-image img {
-    display:
-      block;
-
-    width:
-      100%;
-
-    height:
-      100%;
-
-    min-height:
-      0;
-
-    aspect-ratio:
-      auto;
-
-    object-fit:
-      cover;
-
-    object-position:
-      center;
-  }
-
-
-  /* ===================================================
-     JASON CONTENT
-  =================================================== */
-
-  .jason-content {
-    min-height:
-      auto;
-
-    padding:
-      75px
-      var(--padding)
-      100px;
-  }
-
-  .jason-title {
-    margin:
-      50px 0 70px;
-
-    font-size:
-      clamp(50px, 14vw, 88px);
-
-    line-height:
-      .78;
-  }
-
-  .jason-info {
-    grid-template-columns:
-      1fr;
-
-    gap:
-      35px;
-  }
-
-  .jason-copy p {
-    font-size:
-      20px;
-  }
-
-
-  /* ===================================================
-     HAIRSTORY
-  =================================================== */
-
-  .hairstory-section {
+  .locations-section {
     padding:
       90px
       var(--padding)
-      120px;
+      110px;
+
+    background:
+      var(--background-muted);
   }
 
-  .hairstory-label {
+  .locations-header {
     margin-bottom:
-      25px;
+      50px;
   }
 
-  .hairstory-title {
+  .locations-title {
     font-size:
-      clamp(60px, 14vw, 90px);
-
-    line-height:
-      .78;
+      clamp(50px, 14vw, 85px);
   }
 
-  .hairstory-rule {
-    margin-top:
-      35px;
-  }
-
-  .hairstory-image {
-    margin-top:
-      35px;
-  }
-
-  .hairstory-image img {
-    width:
-      100%;
-
-    max-height:
-      none;
-
-    height:
-      auto;
-
-    object-fit:
-      initial;
-  }
-
-  .hairstory-main {
-    padding-top:
-      60px;
-  }
-
-  .hairstory-quote {
-    margin-bottom:
-      80px;
-  }
-
-  .hairstory-quote p {
-    font-size:
-      clamp(28px, 8vw, 42px);
-
-    line-height:
-      .98;
-  }
-
-  .hairstory-info {
+  .locations-grid {
     grid-template-columns:
       1fr;
 
@@ -1319,9 +1637,27 @@ figure {
       25px;
   }
 
-  .hairstory-copy p {
+  .location-map {
+    aspect-ratio:
+      4 / 3;
+  }
+
+  .location-info {
+    min-height:
+      210px;
+
+    padding:
+      25px;
+  }
+
+  .location-city {
     font-size:
-      20px;
+      clamp(34px, 10vw, 55px);
+  }
+
+  .location-address {
+    font-size:
+      14px;
   }
 
 
@@ -1335,6 +1671,12 @@ figure {
 
     gap:
       14px;
+
+    background:
+      var(--background);
+
+    color:
+      var(--gray);
   }
 
 }
@@ -1360,365 +1702,4 @@ figure {
     transition:
       none !important;
   }
-}
-
-/* =====================================================
-   LOCATIONS
-===================================================== */
-
-.locations-section {
-
-  width: 100%;
-
-  padding:
-    clamp(90px, 12vw, 180px)
-    var(--padding)
-    clamp(100px, 14vw, 180px);
-
-  border-top:
-    1px solid var(--black);
-
-  background:
-    var(--background);
-}
-
-
-/* =====================================================
-   LOCATIONS HEADER
-===================================================== */
-
-.locations-header {
-
-  margin-bottom:
-    clamp(45px, 7vw, 90px);
-}
-
-.locations-label {
-
-  margin-bottom:
-    25px;
-
-  font-size:
-    10px;
-
-  line-height:
-    1;
-
-  text-transform:
-    uppercase;
-
-  letter-spacing:
-    .12em;
-
-  color:
-    var(--gray);
-}
-
-.locations-title {
-
-  margin:
-    0;
-
-  font-size:
-    clamp(55px, 9vw, 145px);
-
-  line-height:
-    .78;
-
-  font-weight:
-    400;
-
-  letter-spacing:
-    -.075em;
-}
-
-
-/* =====================================================
-   LOCATION GRID
-===================================================== */
-
-.locations-grid {
-
-  display:
-    grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap:
-    var(--gap);
-}
-
-
-/* =====================================================
-   LOCATION CARD
-===================================================== */
-
-.location-card {
-
-  display:
-    block;
-
-  border:
-    1px solid var(--black);
-
-  background:
-    var(--background);
-
-  text-decoration:
-    none;
-}
-
-
-/* =====================================================
-   MAP
-===================================================== */
-
-.location-map {
-
-  position:
-    relative;
-
-  width:
-    100%;
-
-  aspect-ratio:
-    16 / 10;
-
-  overflow:
-    hidden;
-
-  border-bottom:
-    1px solid var(--black);
-
-  background:
-    #dedad4;
-
-  filter:
-    grayscale(1);
-}
-
-.location-map iframe {
-
-  position:
-    absolute;
-
-  inset:
-    0;
-
-  width:
-    100%;
-
-  height:
-    100%;
-
-  border:
-    0;
-
-  filter:
-    grayscale(1)
-    contrast(.9);
-
-}
-
-
-/* =====================================================
-   LOCATION INFORMATION
-===================================================== */
-
-.location-info {
-
-  min-height:
-    230px;
-
-  padding:
-    clamp(25px, 3vw, 45px);
-
-  display:
-    grid;
-
-  grid-template-columns:
-    1fr auto;
-
-  grid-template-rows:
-    auto auto 1fr auto;
-
-  column-gap:
-    20px;
-}
-
-
-.location-name {
-
-  grid-column:
-    1 / -1;
-
-  font-size:
-    10px;
-
-  line-height:
-    1;
-
-  text-transform:
-    uppercase;
-
-  letter-spacing:
-    .12em;
-}
-
-
-.location-city {
-
-  grid-column:
-    1 / -1;
-
-  margin-top:
-    14px;
-
-  font-size:
-    clamp(32px, 4vw, 58px);
-
-  line-height:
-    .85;
-
-  font-weight:
-    400;
-
-  letter-spacing:
-    -.055em;
-}
-
-
-.location-address {
-
-  grid-column:
-    1;
-
-  align-self:
-    end;
-
-  margin-top:
-    40px;
-
-  font-size:
-    14px;
-
-  line-height:
-    1.25;
-}
-
-
-.location-link {
-
-  grid-column:
-    2;
-
-  align-self:
-    end;
-
-  margin-top:
-    40px;
-
-  font-size:
-    9px;
-
-  line-height:
-    1;
-
-  text-transform:
-    uppercase;
-
-  letter-spacing:
-    .12em;
-
-  text-align:
-    right;
-}
-
-
-/* =====================================================
-   LOCATION CARD — NO HOVER EFFECT
-===================================================== */
-
-.location-card:hover,
-.location-card:focus,
-.location-card:active {
-
-  color:
-    var(--black);
-
-  text-decoration:
-    none;
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 720px) {
-
-  .locations-section {
-
-    padding:
-      90px
-      var(--padding)
-      110px;
-  }
-
-
-  .locations-header {
-
-    margin-bottom:
-      50px;
-  }
-
-
-  .locations-title {
-
-    font-size:
-      clamp(50px, 14vw, 85px);
-  }
-
-
-  .locations-grid {
-
-    grid-template-columns:
-      1fr;
-
-    gap:
-      25px;
-  }
-
-
-  .location-map {
-
-    aspect-ratio:
-      4 / 3;
-  }
-
-
-  .location-info {
-
-    min-height:
-      210px;
-
-    padding:
-      25px;
-  }
-
-
-  .location-city {
-
-    font-size:
-      clamp(34px, 10vw, 55px);
-  }
-
-
-  .location-address {
-
-    font-size:
-      14px;
-  }
-
 }
