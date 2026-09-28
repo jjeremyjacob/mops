@@ -378,6 +378,20 @@ figure {
     var(--gray);
 }
 
+.booking-quote p {
+  margin:
+    0;
+    margin-top:50px;
+
+  font-size:
+    clamp(30px, 4.5vw, 72px);
+
+  line-height:
+    .98;
+
+  letter-spacing:
+    -.055em;
+}
 
 /* =====================================================
    BOOKING
